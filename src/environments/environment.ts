@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   baseUrl:"http://localhost:4200/assets/db",
-  "solo":"solo gaste 5 horas"
+  tiempo:"tiempo que pude utilizar 5 horas"
 };
 
 /*
