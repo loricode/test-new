@@ -31,7 +31,7 @@ export class SignInComponent implements OnInit {
     this.authService.getCredentials({...this.authForm.value }).subscribe(
       resp => {
         console.log(resp)
-        this.router.navigate(['/dashboard'])
+        this.router.navigate(['/dashboard/aeronave'])
       }
     );
   }
