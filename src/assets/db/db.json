@@ -1,0 +1,6 @@
+{
+  "aeronaves":[
+    { "code":"abc", "name":"QA"},
+    { "code":"def", "name":"PROJECT MANAGER"}
+  ]
+}

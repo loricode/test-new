@@ -1,0 +1,71 @@
+
+  <div class="container mt-4rem mycontainer">
+    <div class="d-flex justify-content-center">
+        <div class="col-md-4 col-10">
+           <div class="shadow-sm rounded p-3">
+             <div class="row">
+                 <div class="col-xl-12 col-md-12">
+                  <form [formGroup]="authForm"  autocomplete="off">
+                    <div class="text-center mb-2">
+                      <img
+                        class="img-fluid"
+                        [src]="img"
+                        alt="logo"
+                      />
+                    </div>
+
+                    <div class="mb-2 p-1 d-flex border rounded">
+                      <input
+                        class="form-control border-0 txt-input"
+                        type="email"
+                        placeholder="Email"
+                        formControlName="email"
+                      />
+                    </div>
+
+                    <div class="mb-2 p-1 d-flex border rounded">
+                      <input
+                        class="form-control border-0  txt-input"
+                        type="password"
+                        placeholder="Password"
+                        formControlName="password"
+                      />
+                    </div>
+
+                    <div class="row d-flex justify-content-between mt-3 mb-2">
+                      <div class="mb-3">
+                        <div class="form-check ms-1">
+                          <input
+                            type="checkbox"
+                            class="form-check-input"
+                            id="mycheckbox"
+                          />
+                          <label class="form-check-label" for="mycheckbox">
+                            Remember
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="d-grid gap-2">
+                      <button type="submit" (click)="signIn()"
+                      [disabled]="authForm.invalid" class="btn btn-primary">
+                        Sign In
+                      </button>
+                    </div>
+
+                    <div class="mt-3 mb-3 text-center">
+                      <a routerLink="/auth/signunp">Forgot Password?</a>
+                    </div>
+
+                    <div class="mt-3 mb-3 text-center">
+                       <h6>Don´t have an account</h6>
+                      <a routerLink="/auth/signunp">Register</a>
+                    </div>
+                  </form>
+                 </div>
+             </div>
+           </div>
+        </div>
+    </div>
+  </div>
+
