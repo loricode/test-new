@@ -4,6 +4,16 @@ import { map } from 'rxjs/operators';
 import { HttpService } from '../../../services/http.service';
 
 
+export interface CredentialResponse {
+  credentials: Credential[];
+}
+
+export interface Credential {
+  email:    string;
+  password: string;
+  role:     string[];
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -11,15 +21,21 @@ export class AuthService {
 
   constructor(private http:HttpService) { }
 
-  public getCredentials( obj: any ):Observable<any>{
+  public getCredentials( obj: any ):Observable<boolean>{
+     let foundUser = false;
     return this.http.get('/credential.json').pipe(
-      map( resp => {
+      map( ( resp:CredentialResponse ) => {
 
-        if(resp.credentials.password === obj.password){
-          localStorage.setItem('token', JSON.stringify(resp.credentials))
-        }
+     const found = resp.credentials.find((item:any) => {
+         return (item.password === obj.password && item.email === obj.email)
+       })
 
-        return resp.credentials.password === obj.password
+       if(found){
+        localStorage.setItem('token', JSON.stringify(found))
+        foundUser = true
+      }
+
+        return foundUser
       })
     );
   }

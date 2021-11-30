@@ -10,6 +10,9 @@ import { AeronaveComponent } from './pages/aeronave/aeronave.component';
 import { ModalFormNaveComponent } from './components/modal-form-nave/modal-form-nave.component';
 import { CoreModule } from '../core/core.module';
 
+import { RoleDirective } from '../../directives/role.directive';
+
+
 @NgModule({
   declarations: [
     HomeComponent,
@@ -18,6 +21,7 @@ import { CoreModule } from '../core/core.module';
     ListComponent,
     AeronaveComponent,
     ModalFormNaveComponent,
+    RoleDirective
   ],
   imports: [
     CommonModule,

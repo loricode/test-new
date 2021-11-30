@@ -9,9 +9,9 @@ import { AeronaveService } from '../../service/aeronave.service';
 })
 export class AeronaveComponent implements OnInit {
 
-  aeronaves: Aeronave[] = [];
+  aeronaves: Aeronave[] = []
 
-  constructor( private aeronaveService: AeronaveService ) { }
+  constructor( public aeronaveService: AeronaveService ) { }
 
   ngOnInit(): void {
     this.getAeronaves();
