@@ -1,8 +1,9 @@
 
 
 <div class="container">
-  <app-list></app-list>
+
+  <app-list (eventCode)="deleteNave($event)" [aeronaves]="aeronaves"></app-list>
 </div>
 
-<app-modal-form-nave></app-modal-form-nave>
+<app-modal-form-nave (eventCreate)="eventCcreate($event)" ></app-modal-form-nave>
 

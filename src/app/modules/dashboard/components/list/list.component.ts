@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Aeronave } from '../../interfaces/aeronave';
-import { AeronaveService } from '../../service/aeronave.service';
+
 
 @Component({
   selector: 'app-list',
@@ -8,25 +8,19 @@ import { AeronaveService } from '../../service/aeronave.service';
   styleUrls: ['./list.component.css']
 })
 export class ListComponent implements OnInit {
+  @Output() eventCode = new EventEmitter<string>()
+  @Input() aeronaves: Aeronave[] = []
 
-  aeronaves: Aeronave[] = []
-
-  constructor( private aeronaveService: AeronaveService ) { }
+  constructor(  ) { }
 
   ngOnInit(): void {
-    this.getAeronaves();
+
   }
 
-  private getAeronaves(): void {
-    this.aeronaveService.getAeronaves().subscribe(
-      resp => {
-        this.aeronaves = resp.aeronaves
-      }
-    )
- }
 
  childrenEventCode(code:string){
-    this.aeronaves =  this.aeronaves.filter( item => item.code !== code)
+
+    this.eventCode.emit(code)
  }
 
 }

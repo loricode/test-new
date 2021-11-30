@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-modal-form-nave',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ModalFormNaveComponent implements OnInit {
 
-  constructor() { }
+  @Output() eventCreate = new EventEmitter<Object>()
+
+  myForm =  this.fb.group({
+    code:['', [Validators.required]],
+    name:['', [Validators.required]]
+  })
+
+  constructor( private fb:FormBuilder ) { }
 
   ngOnInit(): void {
+  }
+
+  createAeronave(){
+    this.eventCreate.emit(this.myForm.value)
   }
 
 }

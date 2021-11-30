@@ -27,7 +27,7 @@ export class SignInComponent implements OnInit {
   ngOnInit(): void { }
 
   public signIn():void {
-   console.log(this.authForm.value)
+
     this.authService.getCredentials({...this.authForm.value }).subscribe(
       resp => {
         console.log(resp)
