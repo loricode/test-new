@@ -11,9 +11,11 @@
 
   <div class="row align-content-center">
 
-
    <div class="col-md-4 col-sm-4" *ngFor="let item of aeronaves">
-      <app-card (eventData)="childrenEventCode($event)"  [item]="item"></app-card>
+      <app-card
+        (eventData)="childrenEventCode($event)"
+        [item]="item"></app-card>
    </div>
+
 </div>
 </div>

@@ -28,9 +28,9 @@ export class AuthService {
 
      const found = resp.credentials.find((item:any) => {
          return (item.password === obj.password && item.email === obj.email)
-       })
+     })
 
-       if(found){
+     if(found){
         localStorage.setItem('token', JSON.stringify(found))
         foundUser = true
       }

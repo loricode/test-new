@@ -11,7 +11,7 @@ import { ModalFormNaveComponent } from './components/modal-form-nave/modal-form-
 import { CoreModule } from '../core/core.module';
 
 import { RoleDirective } from '../../directives/role.directive';
-
+import { MylowercasePipe } from '../../pipes/mylowercase.pipe';
 
 @NgModule({
   declarations: [
@@ -21,7 +21,8 @@ import { RoleDirective } from '../../directives/role.directive';
     ListComponent,
     AeronaveComponent,
     ModalFormNaveComponent,
-    RoleDirective
+    RoleDirective,
+    MylowercasePipe
   ],
   imports: [
     CommonModule,
